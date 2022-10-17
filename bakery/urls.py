@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from stores import views as store_views, create_store_item
+from stores import views as store_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("items/", store_views.get_store_items, name="store-item-list"),
-    path("create-store-item/",create_store_item, name="create-store-item" ),
+    path("create-store-item/", store_views.create_store_item, name="create-store-item" ),
 ] 
