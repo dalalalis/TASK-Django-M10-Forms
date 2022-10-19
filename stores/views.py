@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 
 from stores import models
 from .forms import StoreItemForm
-from.models import StoreItem
+from .models import StoreItem
 
 def get_store_items(request: HttpRequest) -> HttpResponse:
     store_items: list[models.StoreItem] = list(models.StoreItem.objects.all())
@@ -32,8 +32,12 @@ def update_store_item (request,item_id ):
         form=StoreItemForm(request.POST, instance=store_item)
         if form.is_valid():
             form.save()
-        return redirect("store-item-list")
+            return redirect("store-item-list")
     return render (request, "update_store_item.html", context)
+
+def delete_store_item (request, item_id):
+    store_item=StoreItem.objects.get(id=item_id).delete()
+    return redirect("store-item-list")
 
 
 

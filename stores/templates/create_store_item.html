@@ -7,8 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <form action={% url 'create-store-item' %} method="POST" }></form>
-    {% csrf_token %} {{form}}
-    <input type="submit" value="create" />
+    <action={% url 'create-store-item' %} method="POST">
+    {% csrf_token %} 
+    {{form}}
+    <input type="submit" value="create" /> </form>
   </body>
 </html>
