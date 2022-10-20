@@ -9,11 +9,15 @@
   <body>
     <h>Edit</h>
     <form
-      action="{% url 'update-store-item' item_id= store_item.id%}"
+      action="{% url 'update-store-item' item_id=store_item.id %}"
       method="POST"
     >
       {%csrf_token%} {{form}}
       <input type="submit" value="Update" />
+
+      <button type="sumit">
+        <a href="{% url 'delete-store-item' item_id=store_item.id %}">delete</a>
+      </button>
     </form>
   </body>
 </html>

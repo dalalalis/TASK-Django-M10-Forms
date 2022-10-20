@@ -1,6 +1,7 @@
 from django.db import models
 
 
+
 class StoreItem(models.Model):
     class ItemKind(models.TextChoices):
         breakfast = "BR"
